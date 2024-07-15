@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+</head>
+<body>
+<header>
+    <h1>{{ title }}</h1>
+    <a href="/">Главная</a>
+    <a href="#">Контакты</a>
+    <a href="#">О нас</a>
+</header>
+<main>
+    {% block content %}
+    <a href="/cloth"><h2>Одежда</h2></a>
+    <a href="/shoes"><h2>Обувь</h2></a>
+    <a href="#"><h2>Головные уборы</h2></a>
+    {% endblock %}
+</main>
+<footer>
+    <p>All rights reserved &copy;</p>
+</footer>
+</body>
+</html>
