@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html
+	dir="ltr"
+	lang="ru-RU">
+	
+	
+	
+		<head>
+	<meta name="generator" content="Hugo 0.89.1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>
+     Let&#39;s Encrypt
+  </title>
+  <meta
+    name="description"
+    content=" Let&#39;s Encrypt - это бесплатный, автоматизированный и открытый Центр Сертификации, созданный для вас некоммерческой организацией Internet Security Research Group (ISRG). "
+  />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@letsencrypt" />
+  <meta name="twitter:title" content="Let&#39;s Encrypt" />
+  <meta name="twitter:url" content="https://letsencrypt.org/ru/" />
+  <meta
+    name="twitter:description"
+    content=" Let&#39;s Encrypt - это бесплатный, автоматизированный и открытый Центр Сертификации, созданный для вас некоммерческой организацией Internet Security Research Group (ISRG). "
+  />
+  <meta name="twitter:image:src" content="https://letsencrypt.org/images/le-logo-twitter-noalpha.png"> <meta name="og:image"
+  content="https://letsencrypt.org/images/LetsEncrypt-SocialShare.png">
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-XEJKGKMHBK"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-XEJKGKMHBK");
+  </script>
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/main.min.4755b5283569574bf93f0a5b80808e5f7e35ec9290c457a4383b050df07a602aabf6d6a4dc84de2ea0dca6b79cb3d1ac8e6a142444a8ee62e69253635e135e97.css"
+    integrity="sha512-R1W1KDVpV0v5PwpbgICOX3417JKQxFekODsFDfB6YCqr9tak3ITeLqDcprecs9GsjmoUJESo7mLmklNjXhNelw=="
+  />
+
+  <link rel="stylesheet" href="/fontawesome-free-6.5.2-web/css/all.min.css" />
+  
+  <link rel="canonical" href="/ru/" />
+   <link rel="alternate"
+  href="/feed.xml" type="application/rss+xml" title="Блог Let&#39;s Encrypt" />
+   
+</head>
+
+	
+	<body>
+		
+<header class="site-header">
+  <a id="skiplink" href="#main-content">Пропустить навигационные ссылки</a>
+  <div class="wrapper">
+    <a class="site-title" href="/ru/"><img src="/images/letsencrypt-logo-horizontal.svg" alt="Let's Encrypt"></a>
+
+    <span id="menuIcon">
+      <i class="fas fa-bars"></i>
+    </span>
+    <nav class="site-nav" id="menu">
+      <div class="pure-menu pure-menu-horizontal custom-can-transform">
+        <ul class="pure-menu-list">
+          
+          <li class="pure-menu-item">
+            <a href="/ru/docs/" class="pure-menu-link" tabindex="0">Документация</a>
+            
+          </li>
+          
+          <li class="pure-menu-item">
+            <a href="https://community.letsencrypt.org/" class="pure-menu-link" tabindex="0">Помощь</a>
+            
+          </li>
+          
+          <li class="pure-menu-item pure-menu-has-children">
+            <a href="#" class="pure-menu-link" tabindex="0">Поддержите нас</a>
+            
+            <ul class="pure-menu-children">
+              
+              <li class="pure-menu-item">
+                <a href="/ru/donate/" class="pure-menu-link">Сделайте пожертвование</a>
+              </li>
+              
+              <li class="pure-menu-item">
+                <a href="https://www.abetterinternet.org/sponsor/" class="pure-menu-link">Станьте нашим спонсором</a>
+              </li>
+              
+              <li class="pure-menu-item">
+                <a href="/ru/sponsors/" class="pure-menu-link">Текущие спонсоры и дарители</a>
+              </li>
+              
+              <li class="pure-menu-item">
+                <a href="/ru/getinvolved/" class="pure-menu-link">Внесите свой вклад</a>
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+          <li class="pure-menu-item pure-menu-has-children">
+            <a href="#" class="pure-menu-link" tabindex="0">О сервисе</a>
+            
+            <ul class="pure-menu-children">
+              
+              <li class="pure-menu-item">
+                <a href="/ru/about/" class="pure-menu-link">Что такое Let&#39;s Encrypt</a>
+              </li>
+              
+              <li class="pure-menu-item">
+                <a href="https://www.abetterinternet.org/about/" class="pure-menu-link">Internet Security Research Group (ISRG)</a>
+              </li>
+              
+              <li class="pure-menu-item">
+                <a href="/ru/docs/dst-root-ca-x3-expiration-september-2021/" class="pure-menu-link">Окончание срока действия DST Root CA X3 (сентябрь 2021 г.)</a>
+              </li>
+              
+              <li class="pure-menu-item">
+                <a href="/ru/docs/faq/" class="pure-menu-link">Часто задаваемые вопросы (ЧЗВ)</a>
+              </li>
+              
+              <li class="pure-menu-item">
+                <a href="https://letsencrypt.status.io/" class="pure-menu-link">Состояние сервиса</a>
+              </li>
+              
+              <li class="pure-menu-item">
+                <a href="/ru/stats/" class="pure-menu-link">Статистика</a>
+              </li>
+              
+              <li class="pure-menu-item">
+                <a href="https://www.abetterinternet.org/careers/" class="pure-menu-link">Карьера</a>
+              </li>
+              
+              <li class="pure-menu-item">
+                <a href="/ru/contact/" class="pure-menu-link">Контакты</a>
+              </li>
+              
+            </ul>
+            
+          </li>
+          
+          
+          
+          
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+          
+          <li class="pure-menu-item pure-menu-has-children">
+            <a href="#" class="pure-menu-link" tabindex="0">Язык <img src="/images/language-icon128px-black.png" class="inline-icon" alt="" aria-hidden="true"></a>
+            <ul class="pure-menu-children menu-for-languages">
+              
+              
+              <li class="pure-menu-item">
+                <a href="/" lang="en-US" hreflang="en-US" class="pure-menu-link">English</a>
+              </li>
+              
+              
+              <li class="pure-menu-item">
+                <a href="/ca/" lang="ca" hreflang="ca" class="pure-menu-link">Català</a>
+              </li>
+              
+              
+              <li class="pure-menu-item">
+                <a href="/cs/" lang="cs-CZ" hreflang="cs-CZ" class="pure-menu-link">Čeština</a>
+              </li>
+              
+              
+              <li class="pure-menu-item">
+                <a href="/el/" lang="el" hreflang="el" class="pure-menu-link">Greek</a>
+              </li>
+              
+              
+              <li class="pure-menu-item">
+                <a href="/pl/" lang="pl" hreflang="pl" class="pure-menu-link">Polish</a>
+              </li>
+              
+              
+              <li class="pure-menu-item">
+                <a href="/ta/" lang="ta" hreflang="ta" class="pure-menu-link">Tamil</a>
+              </li>
+              
+              
+              <li class="pure-menu-item">
+                <a href="/th/" lang="th" hreflang="th" class="pure-menu-link">Thai</a>
+              </li>
+              
+              
+              <li class="pure-menu-item">
+                <a href="/da/" lang="da" hreflang="da" class="pure-menu-link">Dansk</a>
+              </li>
+              
+              
+              <li class="pure-menu-item">
+                <a href="/de/" lang="de-DE" hreflang="de-DE" class="pure-menu-link">Deutsch</a>
+              </li>
+              
+              
+              <li class="pure-menu-item">
+                <a href="/es/" lang="es-US" hreflang="es-US" class="pure-menu-link">Español</a>
+              </li>
+              
+              
+              <li class="pure-menu-item">
+                <a href="/fi/" lang="fi" hreflang="fi" class="pure-menu-link">Suomi</a>
+              </li>
+              
+              
+              <li class="pure-menu-item">
+                <a href="/fr/" lang="fr-FR" hreflang="fr-FR" class="pure-menu-link">Français</a>
+              </li>
+              
+              
+              <li class="pure-menu-item">
+                <a href="/he/" lang="he" hreflang="he" class="pure-menu-link">עברית</a>
+              </li>
+              
+              
+              <li class="pure-menu-item">
+                <a href="/hu/" lang="hu" hreflang="hu" class="pure-menu-link">Hungarian</a>
+              </li>
+              
+              
+              <li class="pure-menu-item">
+                <a href="/id/" lang="id-ID" hreflang="id-ID" class="pure-menu-link">Bahasa Indonesia</a>
+              </li>
+              
+              
+              <li class="pure-menu-item">
+                <a href="/it/" lang="it-IT" hreflang="it-IT" class="pure-menu-link">Italiano</a>
+              </li>
+              
+              
+              <li class="pure-menu-item">
+                <a href="/ja/" lang="ja" hreflang="ja" class="pure-menu-link">日本語</a>
+              </li>
+              
+              
+              <li class="pure-menu-item">
+                <a href="/ko/" lang="ko-KR" hreflang="ko-KR" class="pure-menu-link">한국어</a>
+              </li>
+              
+              
+              <li class="pure-menu-item">
+                <a href="/pt-br/" lang="pt-BR" hreflang="pt-BR" class="pure-menu-link">Português do Brasil</a>
+              </li>
+              
+              
+              <li class="pure-menu-item">
+                <a href="/ru/" lang="ru-RU" hreflang="ru-RU" class="pure-menu-link">✓ Русский</a>
+              </li>
+              
+              
+              <li class="pure-menu-item">
+                <a href="/si/" lang="si" hreflang="si" class="pure-menu-link">සිංහල</a>
+              </li>
+              
+              
+              <li class="pure-menu-item">
+                <a href="/sr/" lang="sr" hreflang="sr" class="pure-menu-link">Srpski</a>
+              </li>
+              
+              
+              <li class="pure-menu-item">
+                <a href="/sv/" lang="sv" hreflang="sv" class="pure-menu-link">Svenska</a>
+              </li>
+              
+              
+              <li class="pure-menu-item">
+                <a href="/uk/" lang="uk-UA" hreflang="uk-UA" class="pure-menu-link">Українська</a>
+              </li>
+              
+              
+              <li class="pure-menu-item">
+                <a href="/vi/" lang="vi-VN" hreflang="vi-VN" class="pure-menu-link">Tiếng Việt</a>
+              </li>
+              
+              
+              <li class="pure-menu-item">
+                <a href="/zh-cn/" lang="zh-Hans-CN" hreflang="zh-Hans-CN" class="pure-menu-link">简体中文</a>
+              </li>
+              
+              
+              <li class="pure-menu-item">
+                <a href="/zh-tw/" lang="zh-Hant-TW" hreflang="zh-Hant-TW" class="pure-menu-link">繁體中文</a>
+              </li>
+              
+            </ul>
+          </li>
+          
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+
+<div id="main-content"></div>
+
+
+		
+<div class="hero tall">
+  <div class="container">
+    <h1>Некоммерческий Центр сертификации, предоставляющий сертификаты TLS для <span>363 миллионов</span> веб-сайтов.</h1>
+    <h2>Читайте о нашей некоммерческой деятельности в этом году в нашем <a href='https://abetterinternet.org/annual-reports/'>Годовом отчете за 2023 год</a>.</h2>
+    <div class="buttons flex">
+      <div class="flex1 tar mr1m">
+        <a class="dib" href="/ru/getting-started/">Приступить</a>
+      </div>
+      <div class="flex1 tal ml1m">
+        <a class="dib" href="https://www.abetterinternet.org/sponsor/">Поддержать</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page-content">
+  <div class="wrapper">
+    <div class="">
+      <div class="pure-g home">
+        <div class="pure-u-1 pure-u-md-1-2">
+          <div class="grid-container">
+            <h2 class="through-line"><a href="/blog/">В нашем блоге</a></h2>
+              <ul class="post-list">
+                
+                
+                  
+                    
+                      <li>
+                        <span class="post-meta">23 июл. 2024 г.</span>
+                        <h2>
+                          
+                            <a class='post-link' href='/2024/07/23/replacing-ocsp-with-crls' hreflang='en' target='_blank'>Intent to End OCSP Service</a>
+                          
+                        </h2>
+                        
+                          Moving to a more privacy-respecting and efficient method of checking certificate revocation.
+                        
+                        <p class="post-excerpt">
+                          
+                            <a href='/2024/07/23/replacing-ocsp-with-crls' hreflang='en' target='_blank'>Ещё...</a>
+                          
+                        </p>
+                      </li>
+                    
+                      <li>
+                        <span class="post-meta">24 июн. 2024 г.</span>
+                        <h2>
+                          
+                            <a class='post-link' href='/2024/06/24/ntpd-rs-deployment' hreflang='en' target='_blank'>More Memory Safety for Let’s Encrypt: Deploying ntpd-rs</a>
+                          
+                        </h2>
+                        
+                          NTP is critical to how TLS works, and now it’s memory safe at Let’s Encrypt.
+                        
+                        <p class="post-excerpt">
+                          
+                            <a href='/2024/06/24/ntpd-rs-deployment' hreflang='en' target='_blank'>Ещё...</a>
+                          
+                        </p>
+                      </li>
+                    
+                      <li>
+                        <span class="post-meta">30 мая 2024 г.</span>
+                        <h2>
+                          
+                            <a class='post-link' href='/2024/05/30/princeton-partnership' hreflang='en' target='_blank'>Let’s Encrypt Continues Partnership with Princeton to Bolster Internet Security</a>
+                          
+                        </h2>
+                        
+                          Increasing defense against BGP attacks thanks to support from the Open Technology Fund.
+                        
+                        <p class="post-excerpt">
+                          
+                            <a href='/2024/05/30/princeton-partnership' hreflang='en' target='_blank'>Ещё...</a>
+                          
+                        </p>
+                      </li>
+                    
+                      <li>
+                        <span class="post-meta">1 мая 2024 г.</span>
+                        <h2>
+                          
+                            <a class='post-link' href='/2024/05/01/ari-in-tailscale' hreflang='en' target='_blank'>Takeaways from Tailscale’s Adoption of ARI</a>
+                          
+                        </h2>
+                        
+                          ACME Renewal Info (ARI) enables easy and automated cert revocation and replacement.
+                        
+                        <p class="post-excerpt">
+                          
+                            <a href='/2024/05/01/ari-in-tailscale' hreflang='en' target='_blank'>Ещё...</a>
+                          
+                        </p>
+                      </li>
+                    
+                      <li>
+                        <span class="post-meta">25 апр. 2024 г.</span>
+                        <h2>
+                          
+                            <a class='post-link' href='/2024/04/25/guide-to-integrating-ari-into-existing-acme-clients' hreflang='en' target='_blank'>An Engineer’s Guide to Integrating ARI into Existing ACME Clients</a>
+                          
+                        </h2>
+                        
+                          Six steps developers can take to integrate ARI into an existing ACME client.
+                        
+                        <p class="post-excerpt">
+                          
+                            <a href='/2024/04/25/guide-to-integrating-ari-into-existing-acme-clients' hreflang='en' target='_blank'>Ещё...</a>
+                          
+                        </p>
+                      </li>
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                
+              </ul>
+              <p class="rss-subscribe">
+                  <i class="fas fa-rss-square" aria-hidden="true"></i>
+                  Подписаться <a href="/feed.xml">на RSS</a>
+                </p>
+              
+          </div>
+        </div>
+        <div class="pure-u-1 pure-u-md-1-2">
+          <div class='grid-container'>
+            <h2 class="through-line"><a href="/ru/sponsors/">Основные спонсоры и инвесторы</a></h2>
+            <div class="text-center home_sponsors">
+
+              <a href="https://www.google.com/chrome/"  rel="nofollow"><img src="/images/sponsors/small/chrome-logo.png" alt="Google Chrome" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://aws.amazon.com/"  ><img src="/images/sponsors/small/aws-logo-2.png" alt="Amazon Web Services" width="80" height="48" class="sponsor-logo-small"></a>
+
+
+              <a href="https://www.mozilla.org/"  ><img src="/images/sponsors/small/mozilla-logo.png" alt="Mozilla" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.cisco.com/"  ><img src="/images/sponsors/small/cisco-logo.png" alt="Cisco" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.eff.org/"  ><img src="/images/sponsors/small/eff-logo.png" alt="Electronic Frontier Foundation" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.ovh.com/"  ><img src="/images/sponsors/small/ovh-logo.png" alt="OVH" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.meta.com/"  ><img src="/images/sponsors/small/meta-logo.png" alt="Meta" width="80" height="48" class="sponsor-logo-small"></a>
+
+
+              <a href="https://www.identrust.com/"  ><img src="/images/sponsors/small/identrust-logo.png" alt="IdenTrust" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.fordfound.org/"  ><img src="/images/sponsors/small/ford-foundation-logo.png" alt="Ford Foundation" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.shopify.com/"  ><img src="/images/sponsors/small/shopify-logo.png" alt="Shopify" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.ibm.com/"  ><img src="/images/sponsors/small/ibm-logo.png" alt="IBM" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.sap.com/"  ><img src="/images/sponsors/small/sap-logo.svg" alt="SAP" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.squarespace.com/"  ><img src="/images/sponsors/small/squarespace-logo.png" alt="Squarespace" width="80" height="48" class="sponsor-logo-small"></a>
+
+
+              <a href="https://automattic.com/"  ><img src="/images/sponsors/small/automattic-logo.png" alt="Automattic" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.akamai.com/"  ><img src="/images/sponsors/small/akamai-logo.png" alt="Akamai" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.cyon.ch/"  ><img src="/images/sponsors/small/cyon-logo.png" alt="Cyon" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.infomaniak.ch/"  ><img src="/images/sponsors/small/infomaniak-logo.png" alt="Infomaniak" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.hostpoint.ch/"  ><img src="/images/sponsors/small/hostpoint-logo.png" alt="HostPoint" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.siteground.com/"  ><img src="/images/sponsors/small/siteground-logo.png" alt="SiteGround" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.vultr.com"  ><img src="/images/sponsors/small/vultr-logo.png" alt="Vultr" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.planethoster.com/"  ><img src="/images/sponsors/small/planethoster-logo.png" alt="Hébergement web" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.fastly.com/"  ><img src="/images/sponsors/small/fastly-logo.png" alt="Fastly" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.3cx.com/"  ><img src="/images/sponsors/small/3cx-logo.png" alt="3CX" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.hawkhost.com/"  ><img src="/images/sponsors/small/hawkhost-logo.png" alt="Hawk Host" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://thebestvpn.com/"  ><img src="/images/sponsors/small/thebestvpn-logo.png" alt="The Best VPN" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.jimdo.com/"  ><img src="/images/sponsors/small/jimdo-logo.png" alt="Jimdo" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.zendesk.com/"  ><img src="/images/sponsors/small/zendesk-logo.png" alt="Zendesk" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.netlify.com/"  ><img src="/images/sponsors/small/netlify-logo.png" alt="Netlify" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.hostpapa.com/lets-encrypt-hosting?utm_source=letsencrypt.org&amp;utm_medium=referral&amp;utm_campaign=us-seo&amp;utm_term=web-hosting&amp;utm_content=180x108-logo"  ><img src="/images/sponsors/small/hostpapa-logo.png" alt="HostPapa" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://dnsimple.com/letsencrypt"  ><img src="/images/sponsors/small/dnsimple-logo.png" alt="dnsimple" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://shiguredo.jp/"  ><img src="/images/sponsors/small/shiguredo-v2-logo.svg" alt="Shiguredo" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.discourse.org/"  ><img src="/images/sponsors/small/discourse-logo.png" alt="Discourse" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://driving-tests.org/"  ><img src="/images/sponsors/small/driving-tests-logo.png" alt="driving-tests.org" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.sakura.ad.jp/"  ><img src="/images/sponsors/small/sakura-logo.png" alt="Sakura Internet" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.duocircle.com/"  ><img src="/images/sponsors/small/duocircle-logo.png" alt="DuoCircle" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://brave.com/"  ><img src="/images/sponsors/small/brave-logo.png" alt="Brave" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://serverpilot.io/"  ><img src="/images/sponsors/small/serverpilot-logo.png" alt="ServerPilot" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://domainname.shop/"  ><img src="/images/sponsors/small/domainnameshop-logo.png" alt="DomainName.Shop" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://github.com/"  ><img src="/images/sponsors/small/github-logo.png" alt="GitHub" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://unraid.net/"  ><img src="/images/sponsors/small/unraid-logo.png" alt="Lime Technology (Unraid)" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://keenetic.com/"  ><img src="/images/sponsors/small/keenetic-logo.png" alt="Keenetic" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.haproxy.com/"  ><img src="/images/sponsors/small/haproxy-logo.png" alt="HAProxy" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.mongodb.com/"  ><img src="/images/sponsors/small/mongodb-logo.png" alt="MongoDB" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.livesport.eu/"  ><img src="/images/sponsors/small/livesport-logo.png" alt="Livesport" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.clever-cloud.com/"  ><img src="/images/sponsors/small/clevercloud-logo.png" alt="Clever Cloud" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://render.com/"  ><img src="/images/sponsors/small/render-logo.png" alt="Render" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://ipinfo.io/"  ><img src="/images/sponsors/small/ipinfo-logo.png" alt="IPInfo" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.greengeeks.com/"  ><img src="/images/sponsors/small/greengeeks-logo.png" alt="GreenGeeks" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.redhat.com/"  ><img src="/images/sponsors/small/redhat-logo.png" alt="RedHat" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.nabucasa.com/"  ><img src="/images/sponsors/small/nabu-casa-logo.png" alt="Nabu Casa" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.wix.com/"  ><img src="/images/sponsors/small/wix-logo.png" alt="Wix" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.heroku.com/"  ><img src="/images/sponsors/small/heroku-logo.png" alt="Heroku" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://snipeitapp.com/"  ><img src="/images/sponsors/small/snipe-it-logo.png" alt="Snipe-IT" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://smallstep.com/"  ><img src="/images/sponsors/small/smallstep-logo.png" alt="Smallstep" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.wpbeginner.com/"  ><img src="/images/sponsors/small/wpbeginner-logo.png" alt="WPBeginner" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.hostscore.net/"  ><img src="/images/sponsors/small/hostscore-logo.png" alt="HostScore" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.hoststar.ch/"  ><img src="/images/sponsors/small/hoststar-logo.png" alt="Hoststar" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.redacted.com/"  ><img src="/images/sponsors/small/redacted-logo.png" alt="Redacted" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.one.com/"  ><img src="/images/sponsors/small/one-com-logo.png" alt="one.com" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://cargo.site/"  ><img src="/images/sponsors/small/cargo-logo.png" alt="Cargo" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://manualsbrain.com/"  ><img src="/images/sponsors/small/manualsbrain-logo.png" alt="ManualsBrain" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://rackspeed.de/"  ><img src="/images/sponsors/small/rack-speed-logo.png" alt="RACK::SPEED" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.duda.co/"  ><img src="/images/sponsors/small/duda-logo.png" alt="Duda" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.ads.com/"  ><img src="/images/sponsors/small/ads-com-logo.png" alt="Ads.com" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.cdmon.com/es/"  ><img src="/images/sponsors/small/cdmon-logo.png" alt="cdmon" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://goteleport.com/"  ><img src="/images/sponsors/small/teleport-logo.png" alt="Teleport" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.nginx.com/"  ><img src="/images/sponsors/small/nginx-logo.png" alt="NGINX" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://vilros.com/"  ><img src="/images/sponsors/small/vilros-logo.png" alt="Vilros" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://actonfamilygiving.org/"  ><img src="/images/sponsors/small/acton-family-giving-logo.png" alt="Acton Family Giving" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://cryptotracker.com/"  ><img src="/images/sponsors/small/cryptotracker-logo.svg" alt="Crypto Tracker" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://tailscale.com/"  ><img src="/images/sponsors/small/tailscale-logo.svg" alt="Tailscale" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://bitlaunch.io/"  ><img src="/images/sponsors/small/bitlaunch-logo.svg" alt="BitLaunch" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.iban.com/"  ><img src="/images/sponsors/small/iban-logo.png" alt="IBAN" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://yubico.com/"  ><img src="/images/sponsors/small/yubico-logo.png" alt="Yubico" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.4kdownload.com/-1uvr6/video-downloader"  ><img src="/images/sponsors/small/4kdownload-logo.png" alt="Video Downloader" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.vpsserver.com/"  ><img src="/images/sponsors/small/VPSServer-logo.svg" alt="VPSServer.com" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.entri.com/"  ><img src="/images/sponsors/small/entri-logo.svg" alt="Entri" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.confluent.io/"  ><img src="/images/sponsors/small/confluent-logo.svg" alt="Confluent" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.jetbrains.com/"  ><img src="/images/sponsors/small/jetbrains-logo.png" alt="Jet Brains" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://ngrok.com/"  ><img src="/images/sponsors/small/ngrok-logo.png" alt="Ngrok" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.securew2.com/"  ><img src="/images/sponsors/small/securew2-logo.svg" alt="SecureW2" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://www.20i.com/"  ><img src="/images/sponsors/small/20i-logo.svg" alt="20i" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://serpapi.com/"  ><img src="/images/sponsors/small/SerpApi-black.png" alt="SerpApi" width="80" height="48" class="sponsor-logo-small"></a>
+
+              <a href="https://ipv6.rs/"  ><img src="/images/sponsors/small/ipv6rs-logo.png" alt="IPv6rs" width="80" height="48" class="sponsor-logo-small"></a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+		
+<div class="donate-footer">
+  <div class="wrapper text-center">
+    <h2>Помогите сделать Интернет безопасным и уважающим вашу конфиденциальность.</h2>
+    <div class="buttons">
+      <a class="accent" href="/ru/donate/">Поддержите нас</a>
+    </div>
+  </div>
+</div>
+
+
+
+<footer class="site-footer">
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-2">
+        <p>  Let's Encrypt - это бесплатный, автоматизированный и открытый Центр Сертификации, созданный для вас
+  некоммерческой организацией <a href="https://www.abetterinternet.org/">Internet Security Research Group (ISRG)</a>.
+</p>
+        <p>
+          <span itemscope itemtype="http://schema.org/PostalAddress">
+            <span itemprop="streetAddress">548 Market St, PMB 77519</span>,
+            <span itemprop="addressLocality">San Francisco</span>,
+            <span itemprop="addressRegion">CA</span>
+            <span itemprop="postalCode">94104-5401</span>,
+            <span itemprop="addressCountry">USA</span>
+          </span>
+        </p>
+        <p>Все письма и запросы отправляйте по адресу:</p>
+        <p>
+          <span itemscope itemtype="http://schema.org/PostalAddress">
+            <span itemprop="streetAddress">PO Box 18666</span>,
+            <span itemprop="addressLocality">Minneapolis</span>,
+            <span itemprop="addressRegion">MN</span>
+            <span itemprop="postalCode">55418-0666</span>,
+            <span itemprop="addressCountry">USA</span>
+          </span>
+        </p>
+      </div>
+
+      <div class="footer-col  footer-col-1">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/letsencrypt">
+              <i class="fab fa-github" aria-hidden="true"></i>
+              <span class="username">GitHub</span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://www.linkedin.com/company/lets-encrypt/">
+              <i class="fab fa-brands fa-linkedin-in" aria-hidden="true"></i>
+              <span class="username">LinkedIn</span>
+            </a>
+          </li>
+         
+          
+          <li>
+            <a href="https://x.com/letsencrypt">
+              <i class="fab fa-brands fa-x-twitter" aria-hidden="true"></i>
+              <span class="username">X</span>
+            </a>
+          </li>
+         
+          
+          <li>
+            <a rel="me" href="https://infosec.exchange/@letsencrypt">
+              <i class="fab fa-mastodon" aria-hidden="true"></i>
+              <span class="username">Mastodon</span>
+            </a>
+          </li>
+         
+        </ul>
+        Ознакомьтесь с нашей <a href="/ru/privacy/">политикой конфиденциальности</a>.<br>
+Ознакомьтесь с нашей <a href="/ru/trademarks/">политикой в отношении товарных знаков</a>.
+
+      </div>
+
+      <div class="footer-col footer-newsletter-col  footer-col-3">
+        <h6>Подпишитесь на нашу рассылку</h6>
+        <iframe src="https://outreach.abetterinternet.org/l/1011011/2023-02-16/6l51" height="200" style="width: 100%; border: 0"></iframe>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+
+<script src="/js/main.9c0b9add2dc0db21de0f695103830dbde01e31d77fa9a2db9ac3c1b9e09e4806f2e0d9a7281b06461b2e162a3560c605b038169b42ff376b4cd28cc71203c8f0.js" integrity="sha512-nAua3S3A2yHeD2lRA4MNveAeMdd/qaLbmsPBueCeSAby4NmnKBsGRhsuFio1YMYFsDgWm0L/N2tM0ozHEgPI8A=="></script>
+
+	</body>
+</html>
