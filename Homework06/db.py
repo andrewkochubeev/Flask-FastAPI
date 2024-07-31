@@ -11,7 +11,7 @@ users = sqlalchemy.Table(
     sqlalchemy.Column('id', sqlalchemy.Integer, primary_key=True),
     sqlalchemy.Column('name', sqlalchemy.String(32)),
     sqlalchemy.Column('surname', sqlalchemy.String(64)),
-    sqlalchemy.Column('email', sqlalchemy.String(128)),
+    sqlalchemy.Column('email', sqlalchemy.String(128), unique=True),
     sqlalchemy.Column('password', sqlalchemy.String(128))
 )
 
